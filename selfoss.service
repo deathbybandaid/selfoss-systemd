@@ -1,0 +1,14 @@
+[Unit]
+Description=The multipurpose rss reader, live stream, mashup, aggregation web application
+
+[Service]
+User=root
+Type=simple
+TimeoutSec=0
+ExecStart=/bin/bash /var/www/html/updateselfoss.sh
+KillMode=process
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=default.target
