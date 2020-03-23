@@ -2,13 +2,17 @@
 
 sleep_timeout=30s
 
+phppath=`which php`
+selfoss_path="/var/www/html/selfoss"
+selfoss_cli_script="$selfoss_path/cliupdate.php"
+
 while true
 do
   LOOPSTART=$(date +"%s")
 
   printf "\nUpdating Selfoss - $LOOPSTART"
 
-  /usr/bin/php /var/www/html/selfoss/cliupdate.php
+  "$phppath" "$selfoss_cli_script"
 
   LOOPEND=$(date +"%s")
 
