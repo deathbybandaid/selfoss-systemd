@@ -1,10 +1,11 @@
 #!/bin/bash
 
-sleep_timeout=30s
+sleep_timeout=15s
 
 phppath=`which php`
 selfoss_path="/var/www/html/selfoss"
 selfoss_cli_script="$selfoss_path/cliupdate.php"
+selfoss_cache_files="$selfoss_path/data/cache/*.spc"
 
 while true
 do
@@ -30,6 +31,9 @@ do
   fi
 
   printf "\nSelfoss Update Took $LOOPTIMEDIFF"
+
+  printf "\nClearing Cache"
+  rm $selfoss_cache_files
 
   printf "\nSleeping for $sleep_timeout"
   sleep $sleep_timeout
