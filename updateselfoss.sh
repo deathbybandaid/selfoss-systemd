@@ -17,7 +17,7 @@ do
   
   if [[ $cache_clear_count -ge 5 ]]
   then
-    if ls $if ls $selfoss_cache_files &> /dev/null;
+    if ls $selfoss_cache_files &> /dev/null;
     then
       printf "\nClearing Cache"
       rm $selfoss_cache_files
